@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de Preguntas</title>
+    <link rel="icon" href="imagenes/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <div id="inicio" class="pantalla activa">
+        <h2>La alegria en el trabajo y la Felicidad Organizacional</h2>
+        <form id="formInicio">
+            <label for="nombre">Nombre Completo:</label>
+            <input type="text" id="nombre" required>
+            <label for="campana">Campaña:</label>
+            <input type="text" id="campana" required>
+            <button type="submit">Iniciar</button>
+        </form>
+    </div>
+
+    <div id="preguntas" class="pantalla oculto">
+        <h2>Pregunta</h2>
+        <p id="textoPregunta"></p>
+        <textarea id="respuesta" placeholder="Escribe tu respuesta"></textarea>
+        <button id="enviarRespuesta">Enviar</button>
+    </div>
+
+    <div id="resultados" class="pantalla oculto">
+        <h2>Resultados</h2>
+        <div id="resultadosInfo"></div>
+    </div>
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.5.0/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.5.0/firebase-analytics.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+          apiKey: "AIzaSyDek2boVBWNplQ9090rK7ywe3PI34HIltI",
+          authDomain: "preguntas-ce09c.firebaseapp.com",
+          projectId: "preguntas-ce09c",
+          storageBucket: "preguntas-ce09c.firebasestorage.app",
+          messagingSenderId: "621878387599",
+          appId: "1:621878387599:web:d3e914eb394522876a61fa",
+          measurementId: "G-SJ69J6PXPE"
+        };
+      
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+      </script>
+
+    <script src="script.js"></script>
+</body>
+</html>
